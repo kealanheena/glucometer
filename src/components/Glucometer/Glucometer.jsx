@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import './Glucometer.css'
+import Display from '../Display/Display';
 
 class Glucometer extends Component {
   state = {
@@ -21,8 +23,12 @@ class Glucometer extends Component {
   }
 
   render = () => {
+    // unpack the component state by using Object Destructuring
+    const { displayValue } = this.state;
     return (
-      <div className="glucometer-container"/>
+      <div className="glucometer-container">
+        <Display displayValue={displayValue} />
+      </div>
     )
   }
 }

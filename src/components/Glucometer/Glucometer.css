@@ -1,0 +1,5 @@
+.glucometer-container {
+  background-color: var(--glucometer-background-color);
+  height: var(--glucometer-height);
+  width: var(--glucometer-width);
+}

@@ -3,8 +3,27 @@ app variables
 */
 
 :root {
+  /* background colors */
+  --glucometer-background-color: #202020;
+
   /* font */
   --main-font: 'Orbitron', sans-serif;
+
+  /* glucometer dimensions */
+  --glucometer-height: 72%;
+  --glucometer-width: 36%;
+}
+
+/*
+media query for tablet or smaller screen
+*/
+
+@media screen and (max-width: 1024px) {
+  :root {
+    /* glucometer dimensions */
+    --glucometer-height: 100%;
+    --glucometer-width: 100%;
+  }
 }
 
 /*
