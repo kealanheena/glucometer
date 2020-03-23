@@ -19,4 +19,8 @@ describe('Keypad', () => {
     wrapper.setProps({buttons: ['test_one', 'test_two']});
     expect(wrapper.find('.buttons-container').text()).toEqual('test_onetest_two');
   });
+
+  it('should render an instance of the Key Component', () => {
+    expect(wrapper.find('Key').length).toEqual(1);
+  });
 });

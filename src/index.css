@@ -9,6 +9,8 @@ app variables
 
   /* font */
   --main-font: 'Orbitron', sans-serif;
+
+  /* font colors */
   --display-text-color: #E6801C;
 
   /* font sizes */
@@ -24,6 +26,10 @@ app variables
   /* display dimensions */
   --display-height: 68%;
   --display-width: 84%;
+
+    /* keypad dimensions */
+    --keypad-height: 20%;
+    --keypad-width: 88%;
 }
 
 /*
