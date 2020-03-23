@@ -5,13 +5,25 @@ app variables
 :root {
   /* background colors */
   --glucometer-background-color: #202020;
+  --display-background-color: #f6f6ff;
 
   /* font */
   --main-font: 'Orbitron', sans-serif;
+  --display-text-color: #E6801C;
+
+  /* font sizes */
+  --display-text-size: 4em;
+
+  /* font weights */
+  --display-text-weight: 400;
 
   /* glucometer dimensions */
   --glucometer-height: 72%;
   --glucometer-width: 36%;
+
+  /* display dimensions */
+  --display-height: 68%;
+  --display-width: 84%;
 }
 
 /*

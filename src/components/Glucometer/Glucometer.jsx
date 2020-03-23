@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Glucometer.css'
 import Display from '../Display/Display';
+import Keypad from '../Keypad/Keypad';
 
 class Glucometer extends Component {
   state = {
@@ -9,9 +10,9 @@ class Glucometer extends Component {
     // value to be displayed in the <Keys />
     buttons: ['Get Bolus'],
     // ratio used to calculate your bolus(amount of insulin needed)
-    ratio: '',
+    // ratio: '',
     // amount of carbs you are eating in grams
-    carbs: ''
+    // carbs: ''
   }
 
   calculateBolus = () => {
@@ -24,10 +25,11 @@ class Glucometer extends Component {
 
   render = () => {
     // unpack the component state by using Object Destructuring
-    const { displayValue } = this.state;
+    const { displayValue, buttons } = this.state;
     return (
       <div className="glucometer-container">
         <Display displayValue={displayValue} />
+        <Keypad buttons={buttons} />
       </div>
     )
   }
