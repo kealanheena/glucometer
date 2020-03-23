@@ -1,11 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Keypad = ({ buttons }) => 
-  <div className="keypad-container"/>;
+const Keypad = ({ buttons }) => {
 
-  Keypad.propTypes = {
-    buttons: PropTypes.array.isRequired,
-  }
+  const buttonKeys = buttons.map(button => <p key={button}>{button}</p>);
+
+  return (
+    <div className="keypad-container">
+      <div className="buttons-container">
+        {buttonKeys}
+      </div>
+    </div>
+  );
+}
+
+Keypad.propTypes = {
+  buttons: PropTypes.array.isRequired,
+}
 
   export default Keypad;
