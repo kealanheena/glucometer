@@ -6,9 +6,16 @@ import Keypad from '../Keypad/Keypad';
 class Glucometer extends Component {
   state = {
     // value to be displayed in <Display />
-    displayValue: 'Welcome to the online carb counter',
+    displayValue: <div>
+                    <p>carbs:
+                      <input className="unit-input" type="number" min="0" max="240"/><em className="unit-display">g</em>
+                    </p> 
+                    <p>1 :
+                      <input  className="unit-input" type="number" min="0" max="55.4"/><em className="unit-display">mmol/L</em>
+                    </p>
+                  </div>,
     // value to be displayed in the <Keys />
-    buttons: ['Get Bolus'],
+    // buttons: ['Get Bolus'],
     // ratio used to calculate your bolus(amount of insulin needed)
     // ratio: '',
     // amount of carbs you are eating in grams

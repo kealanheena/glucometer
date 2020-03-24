@@ -14,6 +14,15 @@
   font-family: var(--main-font);
   font-weight: var(--display-text-weight);
   text-align: center;
-  margin-left: auto;
   overflow: hidden;
+}
+
+.unit-display {
+  font-size: 0.4em;
+}
+
+.unit-input {
+  padding: 2%;
+  text-align: right;
+  font-size: 0.5em;
 }
