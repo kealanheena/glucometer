@@ -16,11 +16,11 @@ class Glucometer extends Component {
   }
 
   calculateBolus = () => {
-    console.log('calculateBolus')
+    console.log('calculateBolus');
   }
 
   updateDisplay = () => {
-    console.log('updateDisplay')
+    console.log('updateDisplay');
   }
 
   render = () => {
