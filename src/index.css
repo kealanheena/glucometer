@@ -6,8 +6,8 @@ app variables
   /* background colors */
   --glucometer-background-color: #202020;
   --display-background-color: #f6f6ff;
-  --button-key-color: #696969;
-  --button-key-color-hover: #3f3f3f;
+  --button-key-color: #808080;
+  --button-key-color-hover: #4e4e4e;
 
   /* font */
   --main-font: 'Orbitron', sans-serif;
@@ -18,7 +18,7 @@ app variables
 
   /* font sizes */
   --display-text-size: 4em;
-  --key-text-size: 3em;
+  --key-text-size: 2.5em;
 
   /* font weights */
   --display-text-weight: 400;

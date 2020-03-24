@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Keypad should render correctly 1`] = `
+<div
+  className="keypad-container"
+>
+  <div
+    className="button-key"
+  >
+    <Key
+      keyValue="Calculate Bolus"
+    />
+  </div>
+</div>
+`;

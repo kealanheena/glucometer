@@ -8,17 +8,16 @@ const Keypad = ({
   calculateBolus,
 }) => {
 
-  const buttonKeys = buttons.map(button => <p key={button}>{button}</p>);
+  // const buttonKeys = buttons.map(button => <p key={button}>{button}</p>);
 
   return (
     <div className="keypad-container">
-      <div className="buttons-container">
-        {buttonKeys}
+      <div className="button-key">
+        <Key 
+          keyAction={calculateBolus} 
+          keyValue='Calculate Bolus'
+        />
       </div>
-      <Key 
-        keyAction={calculateBolus} 
-        keyValue=''
-      />
     </div>
   );
 }
