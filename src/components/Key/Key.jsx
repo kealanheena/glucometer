@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import './Key.css'
 
 const Key = ({ keyAction, keyValue }) => (
-  <div className="key-container">
+  <div 
+    className="key-container"
+    onClick={() => keyAction()}
+  >
     <p className="key-value">
       {keyValue}
     </p>

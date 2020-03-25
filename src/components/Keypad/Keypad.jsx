@@ -23,6 +23,7 @@ const Keypad = ({
 }
 
 Keypad.propTypes = {
+  calculateBolus: PropTypes.func.isRequired,
   buttons: PropTypes.array.isRequired,
 }
 

@@ -7,12 +7,12 @@ class Glucometer extends Component {
   state = {
     // value to be displayed in <Display />
     displayValue: <div>
-                    <p>carbs:
-                      <input className="unit-input" type="number" min="0" max="240"/><em className="unit-display">g</em>
-                    </p> 
-                    <p>1 :
-                      <input  className="unit-input" type="number" min="0" max="55.4"/><em className="unit-display">mmol/L</em>
-                    </p>
+                    <p>carbs:</p> 
+                    <input className="unit-input" type="number" min="0" max="240"/>
+                    <em className="unit-display">g</em>
+                    <p>1 u :</p>
+                    <input  className="unit-input" type="number" min="0" max="55.4"/>
+                    <em className="unit-display">mmol/L</em>
                   </div>,
     // value to be displayed in the <Keys />
     // buttons: ['Get Bolus'],
@@ -36,7 +36,10 @@ class Glucometer extends Component {
     return (
       <div className="glucometer-container">
         <Display displayValue={displayValue} />
-        <Keypad buttons={buttons} />
+        <Keypad 
+          buttons={buttons}
+          calculateBolus={this.calculateBolus}
+        />
       </div>
     )
   }
