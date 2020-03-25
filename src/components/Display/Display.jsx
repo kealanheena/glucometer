@@ -4,12 +4,12 @@ import './Display.css'
 
 const Display = ({ displayValue }) => (
   <div className="display-container">
-    <p className="display-value">
+    <div className="display-value">
       { displayValue }
-    </p>
+    </div>
   </div>
 );
 
-Display.propTypes = { displayValue: PropTypes.string.isRequired };
+Display.propTypes = { displayValue: PropTypes.any.isRequired };
 
 export default Display;

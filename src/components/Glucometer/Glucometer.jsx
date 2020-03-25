@@ -15,7 +15,7 @@ class Glucometer extends Component {
                     <em className="unit-display">mmol/L</em>
                   </div>,
     // value to be displayed in the <Keys />
-    // buttons: ['Get Bolus'],
+    buttons: ['Get Bolus'],
     // ratio used to calculate your bolus(amount of insulin needed)
     // ratio: '',
     // amount of carbs you are eating in grams

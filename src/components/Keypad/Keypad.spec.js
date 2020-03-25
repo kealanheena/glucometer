@@ -7,7 +7,10 @@ describe('Keypad', () => {
 
   beforeEach(() => {
     wrapper = shallow(
-      <Keypad buttons={[]}/>
+      <Keypad 
+        buttons={[]}
+        calculateBolus={jest.fn}
+      />
     )
   });
 

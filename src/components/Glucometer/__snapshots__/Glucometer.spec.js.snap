@@ -39,6 +39,11 @@ exports[`Glucometer should render correctly 1`] = `
     }
   />
   <Keypad
+    buttons={
+      Array [
+        "Get Bolus",
+      ]
+    }
     calculateBolus={[Function]}
   />
 </div>

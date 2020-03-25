@@ -4,8 +4,10 @@ exports[`Display should render correctly 1`] = `
 <div
   className="display-container"
 >
-  <p
+  <div
     className="display-value"
-  />
+  >
+    <p />
+  </div>
 </div>
 `;

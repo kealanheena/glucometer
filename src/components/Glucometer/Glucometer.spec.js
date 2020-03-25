@@ -18,7 +18,10 @@ describe('Glucometer', () => {
   it('should render the Display and Keypad Components', () => {
     expect(wrapper.containsAllMatchingElements([
       <Display displayValue={wrapper.instance().state.displayValue}/>,
-      <Keypad buttons={wrapper.instance().state.buttons}/>
+      <Keypad 
+        buttons={wrapper.instance().state.buttons}
+        calculateBolus={wrapper.instance().calculateBolus}
+      />
     ])).toEqual(true);
   });
 });
