@@ -60,3 +60,15 @@ describe('updateDisplay', () => {
     expect(wrapper.state('displayValue')).toEqual("8 units");
   });
 });
+
+describe('calculateBolus', () => {
+  let wrapper;
+
+  beforeEach(() => wrapper = shallow(<Glucometer/>));
+
+  it('should divide the ratio(2) by the amount of carbs(6)', () => {
+    wrapper.instance().calculateBolus(6, 2);
+    expect(wrapper.state('displayValue')).toEqual("3 units");
+  });
+
+});
