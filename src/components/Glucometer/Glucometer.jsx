@@ -28,6 +28,7 @@ class Glucometer extends Component {
 
   updateDisplay = () => {
     console.log('updateDisplay');
+    this.state.displayValue = 6
   }
 
   render = () => {

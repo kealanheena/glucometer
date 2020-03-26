@@ -39,3 +39,14 @@ describe('mounted Glucometer', () => {
     expect(spy).toHaveBeenCalledTimes(1);
   });
 });
+
+describe('updateDisplay', () => {
+  let wrapper;
+
+  beforeEach(() => wrapper = shallow(<Glucometer/>));
+
+  it('updates displayValue', () => {
+    wrapper.instance().updateDisplay(6);
+    expect(wrapper.state('displayValue')).toEqual(6);
+  });
+});

@@ -6,6 +6,7 @@
   padding: 0 4%;
   margin: 4%;
   width: var(--display-width);
+  border-radius: 5%;
 }
 
 .display-value {
