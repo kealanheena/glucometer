@@ -14,7 +14,7 @@ const Keypad = ({
     <div className="keypad-container">
       <div className="button-key">
         <Key 
-          keyAction={calculateBolus} 
+          keyAction={() => calculateBolus()} 
           keyValue='Calculate Bolus'
         />
       </div>

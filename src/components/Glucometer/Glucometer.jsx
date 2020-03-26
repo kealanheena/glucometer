@@ -10,10 +10,10 @@ class Glucometer extends Component {
       // value to be displayed in <Display />
       displayValue: <div>
                       <p>carbs:</p> 
-                      <input className="unit-input" type="number" min="0" max="240"/>
+                      <input id="carbs" className="unit-input" type="number" min="0" max="240"/>
                       <em className="unit-display">g</em>
                       <p>1 u :</p>
-                      <input  className="unit-input" type="number" min="0" max="55.4"/>
+                      <input id="ratio" className="unit-input" type="number" min="0" max="55.4"/>
                       <em className="unit-display">mmol/L</em>
                     </div>,
       // value to be displayed in the <Keys />
@@ -26,16 +26,23 @@ class Glucometer extends Component {
     this.updateDisplay = this.updateDisplay.bind(this);
   }
 
-  calculateBolus = (carbs, ratio) => {
-    let units = Math.floor(carbs/ratio);
-    this.updateDisplay(units);
+  calculateBolus = (carbs = NaN, ratio = NaN, test = false) => {
+    if (test) {
+      let units = Math.floor(carbs/ratio);
+      this.updateDisplay(units);
+    } else {
+      carbs = document.getElementById('carbs').value;
+      ratio = document.getElementById('ratio').value;
+      let units = Math.floor(carbs/ratio);
+      this.updateDisplay(units);
+    }
   }
 
   updateDisplay = (bolus) => {
     let { displayValue } = this.state;
     displayValue = `${bolus} units`;
     if (displayValue === 'Infinity units') displayValue = 'ERROR';
-    
+
     this.setState({ displayValue });
   }
 
