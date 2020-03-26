@@ -47,6 +47,16 @@ describe('updateDisplay', () => {
 
   it('updates displayValue', () => {
     wrapper.instance().updateDisplay(6);
-    expect(wrapper.state('displayValue')).toEqual(6);
+    expect(wrapper.state('displayValue')).toEqual('6 units');
+  });
+
+  it('updates displayValue to the argument passed to it', () => {
+    wrapper.instance().updateDisplay(3);
+    expect(wrapper.state('displayValue')).toEqual('3 units');
+  });
+
+  it('should add a "units" to the end opf the display value', () => {
+    wrapper.instance().updateDisplay(8);
+    expect(wrapper.state('displayValue')).toEqual("8 units");
   });
 });

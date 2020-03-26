@@ -26,9 +26,8 @@ class Glucometer extends Component {
     console.log('calculateBolus');
   }
 
-  updateDisplay = () => {
-    console.log('updateDisplay');
-    this.state.displayValue = 6
+  updateDisplay = (bolus) => {
+    this.state.displayValue = `${bolus} units`;
   }
 
   render = () => {
