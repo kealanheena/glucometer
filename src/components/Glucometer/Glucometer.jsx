@@ -25,14 +25,17 @@ class Glucometer extends Component {
     }
     this.updateDisplay = this.updateDisplay.bind(this);
   }
+
   calculateBolus = (carbs, ratio) => {
-    let units = carbs/ratio
-    this.updateDisplay(units)
+    let units = Math.floor(carbs/ratio);
+    this.updateDisplay(units);
   }
 
   updateDisplay = (bolus) => {
     let { displayValue } = this.state;
     displayValue = `${bolus} units`;
+    if (displayValue === 'Infinity units') displayValue = 'ERROR';
+    
     this.setState({ displayValue });
   }
 
