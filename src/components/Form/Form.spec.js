@@ -14,4 +14,10 @@ describe('Form', () => {
   it('should render 3 <input/>\'s', () => {
     expect(wrapper.find('input').length).toEqual(3);
   });
+  
+  it('should update the state of carbs when the carbs input is changed', () => {
+    const input = wrapper.find('input').first();
+    input.simulate('change', { target: { value: 10 } })
+    expect(wrapper.state('carbs')).toEqual(10);
+  });
 });
