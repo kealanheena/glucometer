@@ -6,6 +6,7 @@ class Form extends React.Component {
     super(props)
     this.state = {
       carbs: 0,
+      ratio: 0,
     }
   }
 
@@ -13,14 +14,25 @@ class Form extends React.Component {
     this.setState({ carbs: e.target.value });
   }
 
+  ratioChangeHandler = (e) => {
+    this.setState({ ratio: e.target.value });
+  }
+
   render(){
     return (
       <form>
         <input 
           type="number"
-          onChange={this.carbsChangeHandler}  
+          min='0'
+          max='240'
+          onChange={this.carbsChangeHandler}
         />
-        <input type="number"/>
+        <input
+          type="number"
+          min='0'
+          max='55.4'
+          onChange={this.ratioChangeHandler}
+        />
         <input type="submit"/>
       </form>
     )}

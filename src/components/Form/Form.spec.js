@@ -20,4 +20,10 @@ describe('Form', () => {
     input.simulate('change', { target: { value: 10 } })
     expect(wrapper.state('carbs')).toEqual(10);
   });
+
+  it('should update the state of ratios when the ratio input is changed', () => {
+    const input = wrapper.find('input').at(1);
+    input.simulate('change', { target: { value: 6 } })
+    expect(wrapper.state('ratio')).toEqual(6);
+  });
 });
