@@ -4,49 +4,8 @@ exports[`Glucometer should render correctly 1`] = `
 <div
   className="glucometer-container"
 >
-  <Display
-    displayValue={
-      <div>
-        <p>
-          carbs:
-        </p>
-        <input
-          className="unit-input"
-          id="carbs"
-          max="240"
-          min="0"
-          type="number"
-        />
-        <em
-          className="unit-display"
-        >
-          g
-        </em>
-        <p>
-          1 u :
-        </p>
-        <input
-          className="unit-input"
-          id="ratio"
-          max="55.4"
-          min="0"
-          type="number"
-        />
-        <em
-          className="unit-display"
-        >
-          mmol/L
-        </em>
-      </div>
-    }
-  />
-  <Keypad
-    buttons={
-      Array [
-        "Get Bolus",
-      ]
-    }
-    calculateBolus={[Function]}
+  <Form
+    submitHandler={[Function]}
   />
 </div>
 `;

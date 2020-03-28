@@ -1,41 +1,37 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
-class Form extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      carbs: 0,
-      ratio: 0,
-    }
-  }
+const Form = ({
+  submitHandler,
+  carbs,
+  ratio,
+  carbsChangeHandler,
+  ratioChangeHandler,
+}) => (
+<form 
+  onSubmit={(e) => {
+    e.preventDefault();
+    submitHandler(carbs, ratio)
+  }}
+>
+  <input 
+    type='number'
+    min='0'
+    max='240'
+    onChange={carbsChangeHandler}
+  />
+  <input
+    type='number'
+    min='0'
+    max='55.4'
+    onChange={ratioChangeHandler}
+  />
+  <input type="submit"/>
+</form>
+)
 
-  carbsChangeHandler = (e) => {
-    this.setState({ carbs: e.target.value });
-  }
-
-  ratioChangeHandler = (e) => {
-    this.setState({ ratio: e.target.value });
-  }
-
-  render(){
-    return (
-      <form>
-        <input 
-          type="number"
-          min='0'
-          max='240'
-          onChange={this.carbsChangeHandler}
-        />
-        <input
-          type="number"
-          min='0'
-          max='55.4'
-          onChange={this.ratioChangeHandler}
-        />
-        <input type="submit"/>
-      </form>
-    )}
+Form.propTypes = {
+  submitHandler: PropTypes.func.isRequired,
 }
 
 export default Form;

@@ -5,7 +5,7 @@ import Form from './Form'
 describe('Form', () => {
   let wrapper;
 
-  beforeEach(() => wrapper = shallow(<Form/>));
+  beforeEach(() => wrapper = shallow(<Form submitHandler={jest.fn} />));
 
   it('should render a <form/>', () => {
     expect(wrapper.find('form').length).toEqual(1);
