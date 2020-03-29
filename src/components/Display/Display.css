@@ -1,29 +1,19 @@
 .display-container {
   align-items: center;
   background: var(--display-background-color);
-  display: flex;
   height: var(--display-height);
   padding: 0 4%;
-  margin: 4%;
+  margin: 0% 4% 4% 4%;
   width: var(--display-width);
-  border-radius: 5%;
+  border-bottom-left-radius: 15%;
+  border-bottom-right-radius: 15%;
 }
 
 .display-value {
+  padding: 15%;
   color: var(--display-text-color);
   font-size: var(--display-text-size);
-  font-family: var(--main-font);
-  font-weight: var(--display-text-weight);
+  font-family: var(--display-font);
   text-align: center;
   overflow: hidden;
-}
-
-.unit-display {
-  font-size: 0.4em;
-}
-
-.unit-input {
-  padding: 2%;
-  text-align: right;
-  font-size: 0.5em;
 }

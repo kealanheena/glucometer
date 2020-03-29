@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './Glucometer.css'
 import Form from '../Form/Form';
-// import Display from '../Display/Display';
-// import Keypad from '../Keypad/Keypad';
 
 class Glucometer extends Component {
   constructor(props) {
@@ -11,30 +9,25 @@ class Glucometer extends Component {
       // value to be displayed in <Display />
       displayValue: '',
       // ratio used to calculate your bolus(amount of insulin needed)
-      ratio: 0,
+      ratio: '0',
       // amount of carbs you are eating in grams
-      carbs: 0,
+      carbs: '0',
     }
-    this.updateDisplay = this.updateDisplay.bind(this);
-    this.calculateBolus = this.calculateBolus.bind(this);
-    // this.calculateBolus = this.calculateBolus.bind(this);
-    this.setCarbs = this.setCarbs.bind(this);
   }
 
   setCarbs = (e) => {
-    let { carbs } = this.state
+    // sets state of carbs when change is made to input
     this.setState({ carbs: e.target.value });
   }
 
   setRatio = (e) => {
-    let { ratio } = this.state
+    // sets state of ratio when change is made to input
     this.setState({ ratio: e.target.value });
   }
 
   calculateBolus = (carbs, ratio) => {
-
-    console.log(carbs);
     let units = Math.floor(carbs/ratio);
+
     this.updateDisplay(units);
   }
 
@@ -42,9 +35,8 @@ class Glucometer extends Component {
     let { displayValue } = this.state;
 
     displayValue = `${bolus} units`;
-    console.log(displayValue)
 
-    // if (displayValue === 'Infinity units') displayValue = 'ERROR';
+    if (displayValue === 'Infinity units' || displayValue === 'NaN units') displayValue = 'ERROR';
 
     this.setState({ displayValue });
   }
@@ -60,13 +52,8 @@ class Glucometer extends Component {
           ratio={ratio}
           carbsChangeHandler={this.setCarbs}
           ratioChangeHandler={this.setRatio}
+          displayValue={displayValue} 
         />
-        <p>{displayValue}</p>
-        {/* <Display displayValue={displayValue} />
-        <Keypad 
-          buttons={buttons}
-          calculateBolus={this.calculateBolus}
-        /> */}
       </div>
     )
   }

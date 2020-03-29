@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import Display from '../Display/Display';
-import Keypad from '../Keypad/Keypad';
+import Form from '../Form/Form'
 import Glucometer from './Glucometer';
 
 describe('Glucometer', () => {
@@ -15,15 +14,18 @@ describe('Glucometer', () => {
     expect(wrapper.find('div').length).toEqual(1);
   });
 
-  // it('should render the Display and Keypad Components', () => {
-  //   expect(wrapper.containsAllMatchingElements([
-  //     <Display displayValue={wrapper.instance().state.displayValue}/>,
-  //     <Keypad 
-  //       buttons={wrapper.instance().state.buttons}
-  //       calculateBolus={wrapper.instance().calculateBolus}
-  //     />
-  //   ])).toEqual(true);
-  // });
+  it('should render the Form Component', () => {
+    expect(wrapper.containsMatchingElement(
+      <Form
+        submitHandler={wrapper.instance().calculateBolus}
+        carbs={wrapper.instance().state.carbs}
+        ratio={wrapper.instance().state.ratio}
+        carbsChangeHandler={wrapper.instance().setCarbs}
+        ratioChangeHandler={wrapper.instance().setRatio}
+        displayValue={wrapper.instance().state.displayValue} 
+      />
+    )).toEqual(true);
+  });
 });
 
 describe('mounted Glucometer', () => {
@@ -31,11 +33,23 @@ describe('mounted Glucometer', () => {
 
   beforeEach(() => wrapper = mount(<Glucometer />));
 
+  it('should update the state of carbs when the carbs input is changed', () => {
+    const input = wrapper.find('input').first();
+    input.simulate('change', { target: { value: 10 } })
+    expect(wrapper.state('carbs')).toEqual(10);
+  });
+
+  it('should update the state of ratios when the ratio input is changed', () => {
+    const input = wrapper.find('input').at(1);
+    input.simulate('change', { target: { value: 6 } })
+    expect(wrapper.state('ratio')).toEqual(6);
+  });
+
   // it('calls calculateBolus when the submit key is clicked', () => {
-  //   const spy = jest.spyOn(wrapper.instance(), 'calculateBolus');
-  //   wrapper.instance().forceUpdate();
+  //   const spy = jest.spyOn(wrapper.instance(), 'updateDisplay');
+  //   wrapper.instance().forceUpdate(); 
   //   expect(spy).toHaveBeenCalledTimes(0);
-  //   wrapper.find('.key-container').simulate('click');
+  //   wrapper.find('.submit-button').first().simulate('click');
   //   expect(spy).toHaveBeenCalledTimes(1);
   // });
 });

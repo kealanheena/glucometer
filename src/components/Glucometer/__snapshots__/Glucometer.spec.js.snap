@@ -5,6 +5,11 @@ exports[`Glucometer should render correctly 1`] = `
   className="glucometer-container"
 >
   <Form
+    carbs="0"
+    carbsChangeHandler={[Function]}
+    displayValue=""
+    ratio="0"
+    ratioChangeHandler={[Function]}
     submitHandler={[Function]}
   />
 </div>
