@@ -22,7 +22,6 @@ As a user,
 So I can get my bolus,
 I would like to see a submit button.
 
-
 As a user,
 So I can see my bolus,
 I would like it to be displayed on the glucometer.
@@ -44,6 +43,22 @@ As a user,
 So I give myself enough insulin,
 I would like to have a maximun ratio I'm allowed to input.
 ```
+
+## Tech Used
+
+- JavaScript
+- React
+- Jest
+- Enzyme
+
+## Features
+
+You can:
+  - Input your carbs
+  - Input your ratio
+  - calculate your bolus
+  
+# Getting Started
 
 ## Local Setup
 
@@ -70,3 +85,41 @@ $ npm start
 ```sh
 $ npm test
 ```
+
+### Test Coverage
+
+#### Unit Tests
+
+- Display:
+  - should render correctly(snapshot)
+  - should render 2 <div/>'s
+  - renders the value of displayValue
+- Form:
+  - should render correctly(snapshot)
+  - should render a <form/>
+  - should render 3 <input/>'s
+  - should render a Display Component
+- Glucometer:
+  - should render correctly(snapshot)
+  - should render a <div />
+  - should render the Form Component
+    - updateDisplay
+      - updates displayValue
+      - updates displayValue to the argument passed to it
+      - should add "units" to the end of the display value
+      - should make "ERROR" the display value when "Infinity" is passed as an argument
+      - should make "ERROR" the display value when "NaN" is passed as an argument
+    - calculateBolus
+      - should divide the ratio(2) by the amount of carbs(6)
+      - should round down when the result is a float
+      - should display "ERROR" if the ratio is "0"
+- App:
+  - should render correctly(snapshot)
+  - should render a <div />
+  - should render Glucometer Component
+
+#### Feature Tests
+
+- Glucometer:
+  - should update the state of carbs when the carbs input is changed
+  - should update the state of ratios when the ratio input is changed
