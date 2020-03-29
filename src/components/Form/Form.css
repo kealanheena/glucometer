@@ -65,5 +65,7 @@ input[type="submit"] {
 }
 
 .logo {
-  height: 100px;
+  height: 15%;
+  display: block;
+  margin: auto;
 }

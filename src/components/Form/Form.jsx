@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Display from '../Display/Display';
+import Logo from '../../img/glucometer-logo.png';
 import './Form.css'
 
 const Form = ({
@@ -43,7 +44,7 @@ const Form = ({
     className="submit-button"
     type="submit"
   />
-  {/* <img className="logo" src="../../../public/glucometer-logo.png" alt="glucometer-logo"/> */}
+  <img className="logo" src={Logo} alt="glucometer-logo"/>
 </form>
 )
 

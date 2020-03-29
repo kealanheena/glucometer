@@ -1,5 +1,8 @@
 # Glucometer
 
+<img src="./readme-img/screenshot-1.png"/>
+<img src="./readme-img/screenshot-2.png"/>
+
 
 ## Local Setup
 
