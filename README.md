@@ -7,7 +7,7 @@
 ## Local Setup
 
 ```sh
-$ git clone 
+$ git clone https://github.com/kealanheena/glucometer.git
 ```
 
 ```sh
