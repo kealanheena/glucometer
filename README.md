@@ -2,11 +2,6 @@
 
 This is a glucometer made through TDD which calculates your bolus (the amount of units of insulin you need) based on the amount of carbs you are eating and your insulin ratio.
 
-<div align="center">
-  <img src="./readme-img/screenshot-1.png"/>
-  <img src="./readme-img/screenshot-2.png"/>
-</div>
-
 ## User Stories
 
 ```
