@@ -1,4 +1,4 @@
-# Glucometer
+# Glucometer App
 
 This is a glucometer made through TDD which calculates your bolus (the amount of units of insulin you need) based on the amount of carbs you are eating and your insulin ratio.
 
